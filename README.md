@@ -12,7 +12,7 @@
 
 ---
 
-# 🏨 Dante Hotel
+# 🏨 Hotel Danté
 
 Sistem manajemen pemesanan kamar hotel berbasis web yang dibangun dengan Laravel. Proyek ini dirancang untuk mempermudah pengelolaan kamar, kategori, dan transaksi sewa antara admin dan pelanggan.
 
