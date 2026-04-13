@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Kamar;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class KategoriController extends Controller
 {
@@ -17,8 +18,7 @@ class KategoriController extends Controller
 
     public function store(Request $request)
     {
-        $validator = \Validator::make($request->all(), [
-            'kategori_nama' => 'required|string|max:255|unique:kategori,kategori_nama',
+        $validator = Validator::make($request->all(), [
             'kategori_deskripsi' => 'required|string',
         ]);
 
@@ -40,7 +40,7 @@ class KategoriController extends Controller
 
     public function update(Request $request, Kategori $kategori)
 {
-    $validator = \Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
         'kategori_nama' => 'required|string|max:255|unique:kategori,kategori_nama,' . $kategori->kategori_id . ',kategori_id',
         'kategori_deskripsi' => 'required|string',
     ]);
