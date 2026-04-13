@@ -147,3 +147,5 @@ Beberapa hal yang bisa dikembangkan ke depannya:
 ## 📄 Lisensi
 
 Proyek ini menggunakan lisensi [MIT](https://opensource.org/licenses/MIT).
+
+I HEART NATASYA ❤️
