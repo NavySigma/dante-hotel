@@ -1,60 +1,149 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="https://laravel.com" target="_blank">
+    <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+  </a>
 </p>
 
-## About Laravel
+<p align="center">
+  <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+  <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# 🏨 Dante Hotel
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sistem manajemen pemesanan kamar hotel berbasis web yang dibangun dengan Laravel. Proyek ini dirancang untuk mempermudah pengelolaan kamar, kategori, dan transaksi sewa antara admin dan pelanggan.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 💡 Latar Belakang
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Proyek ini dibuat sebagai solusi sederhana untuk manajemen hotel skala kecil hingga menengah. Banyak hotel masih mengelola pemesanan secara manual, sehingga rentan terhadap kesalahan dan tidak efisien. Dante Hotel hadir untuk menyederhanakan proses tersebut melalui sistem berbasis web yang mudah digunakan oleh admin maupun pelanggan.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Teknologi yang Digunakan
 
-### Premium Partners
+| Teknologi                               | Keterangan                    |
+| --------------------------------------- | ----------------------------- |
+| [Laravel 11](https://laravel.com)       | PHP Framework utama           |
+| [Tailwind CSS](https://tailwindcss.com) | Styling UI                    |
+| [Vite](https://vitejs.dev)              | Asset bundler                 |
+| [MySQL](https://www.mysql.com)          | Database                      |
+| [XAMPP](https://www.apachefriends.org)  | Local server (Apache + MySQL) |
+| Blade Templating                        | Template engine Laravel       |
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## ⚙️ Cara Install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Prasyarat
 
-## Code of Conduct
+- PHP >= 8.2
+- Composer
+- Node.js & NPM
+- XAMPP (atau MySQL server lainnya)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Langkah-langkah
 
-## Security Vulnerabilities
+```bash
+# 1. Clone repository
+git clone https://github.com/username/dante-hotel.git
+cd dante-hotel
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 2. Install dependencies PHP
+composer install
 
-## License
+# 3. Install dependencies Node
+npm install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-"# dante-hotel" 
+# 4. Salin file environment
+cp .env.example .env
+
+# 5. Generate app key
+php artisan key:generate
+```
+
+Sesuaikan konfigurasi database di file `.env`:
+
+```env
+DB_DATABASE=dante_hotel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+```bash
+# 6. Jalankan migrasi dan seeder
+php artisan migrate:fresh --seed
+
+# 7. Build assets
+npm run build
+
+# 8. Jalankan aplikasi
+php artisan serve
+```
+
+Akses di browser: `http://localhost:8000`
+
+---
+
+## ✨ Fitur
+
+### 👤 Autentikasi
+
+- Login & Register pelanggan
+- Role-based access (Admin & Customer)
+- Middleware proteksi halaman per role
+
+### 🛎️ Admin
+
+- **Dashboard** — ringkasan data hotel
+- **Manajemen Kategori** — tambah, edit, hapus kategori kamar
+- **Manajemen Kamar** — tambah, edit, hapus data kamar beserta foto
+- **Manajemen Sewa** — lihat detail transaksi, update status, checkout, dan hapus data sewa
+
+### 🙋 Customer
+
+- **Lihat Kamar** — browse kamar yang tersedia beserta harga dan detail
+- **Pemesanan** — pesan kamar dengan pilihan tanggal check-in, lama menginap, dan metode pembayaran
+- **Riwayat Pemesanan** — lihat histori sewa yang pernah dilakukan
+- **Rating Kamar** — beri rating bintang untuk kamar yang pernah disewa
+- **Pengaturan Akun** — update data profil
+
+---
+
+## 📁 Struktur Direktori Utama
+
+```
+app/
+├── Http/Controllers/
+│   ├── Admin/          # Controller untuk admin
+│   └── Anggota/        # Controller untuk customer
+├── Models/             # Eloquent models
+resources/views/
+├── pages/
+│   ├── admin/          # Halaman admin
+│   ├── customer/       # Halaman customer
+│   └── auth/           # Halaman login & register
+└── components/         # Layout & komponen reusable
+```
+
+---
+
+## 🚀 Saran Pengembangan
+
+Beberapa hal yang bisa dikembangkan ke depannya:
+
+- Integrasi payment gateway (Midtrans / Xendit)
+- Notifikasi email konfirmasi pemesanan
+- Export laporan sewa ke PDF / Excel
+- Fitur pencarian dan filter kamar yang lebih lengkap
+- Tampilan mobile yang lebih optimal (PWA)
+
+---
+
+## 📄 Lisensi
+
+Proyek ini menggunakan lisensi [MIT](https://opensource.org/licenses/MIT).
